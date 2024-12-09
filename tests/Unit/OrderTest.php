@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class OrderTest extends TestCase
 {
-    public function testCalculateTotal(): void
+    public function testOrder(): void
     {
         $order = new Order();
         $item1 = new OrderItem();
@@ -25,17 +25,5 @@ class OrderTest extends TestCase
 
     }
 
-    public function testApplyDiscount()
-    {
-        $orderCalculator = new OrderCalculator();
 
-        $order = new Order();
-        $orderItem = new OrderItem();
-
-        $total = 187.5;
-        $discount = 20;
-        $order->addOrderItemOfOrder($orderItem);
-
-        $this->assertEquals(150, $orderCalculator->applyDiscount($total, $discount));
-    }
 }
